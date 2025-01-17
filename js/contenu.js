@@ -39,6 +39,30 @@ fetch('plan_ign.csv')
             article.id = 'symbo';
             article.className = sous_classe;
             article.innerHTML = `
+                <h4 id='symboDeploi${columns[3].replace(/.*?"(.*?)".*/, '$1')}' class='symboDeploi'>${columns[3].replace(/.*?"(.*?)".*/, '$1')}</h4>`
+            if (columns[4].replace(/.*?"(.*?)".*/, '$1') !== "NULL") {
+                article.innerHTML += `
+                <p id='info_symbo' class='${columns[3].replace(/.*?"(.*?)".*/, '$1')}'>Maxzoom = ${columns[4].replace(/.*?"(.*?)".*/, '$1')}</p>
+                <p id='info_symbo' class='${columns[3].replace(/.*?"(.*?)".*/, '$1')}'>Minzoom = ${columns[5].replace(/.*?"(.*?)".*/, '$1')}</p>`
+            }
+            article.innerHTML += `
+                <table id='info_symbo' class='${columns[3].replace(/.*?"(.*?)".*/, '$1')}' style='border: solid 2px rgb(130, 130, 130)'>
+                    <tr>
+                        <th>N0</th>
+                        <th>N10</th>
+                        <th>N25</th>
+                        <th>N50</th>
+                        <th>N99</th>
+                    </tr>
+                    <tr>
+                        <td style='background-color: ${columns[6].replace(/.*?"(.*?)".*/, '$1') == "True" ? 'green' : 'darkgray'}'></td>
+                        <td style='background-color: ${columns[7].replace(/.*?"(.*?)".*/, '$1') == "True" ? 'green' : 'darkgray'}'></td>
+                        <td style='background-color: ${columns[8].replace(/.*?"(.*?)".*/, '$1') == "True" ? 'green' : 'darkgray'}'></td>
+                        <td style='background-color: ${columns[9].replace(/.*?"(.*?)".*/, '$1') == "True" ? 'green' : 'darkgray'}'></td>
+                        <td style='background-color: ${columns[10].trim().replace(/.*?"(.*?)".*/, '$1').toLowerCase() === "true" ? 'green' : 'darkgray'}'></td>
+                    </tr>
+                </table>
+            `;article.innerHTML = `
                 <h4 id='symboDeploi${columns[3].replace(/.*?"(.*?)".*/, '$1')}' class='symboDeploi'>${columns[3].replace(/.*?"(.*?)".*/, '$1')}</h4>
                 <p id='info_symbo' class='${columns[3].replace(/.*?"(.*?)".*/, '$1')}'>Maxzoom = ${columns[4].replace(/.*?"(.*?)".*/, '$1')}</p>
                 <p id='info_symbo' class='${columns[3].replace(/.*?"(.*?)".*/, '$1')}'>Minzoom = ${columns[5].replace(/.*?"(.*?)".*/, '$1')}</p>
