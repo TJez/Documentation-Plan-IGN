@@ -1,0 +1,116 @@
+html {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 500px auto;
+  grid-template-rows: 150px auto;
+  margin: 0 auto;
+}
+
+#head{
+  width: 100%;
+  background-color: rgb(88, 88, 88);
+  margin-bottom: 10px;
+  text-align: center;
+  color: white;
+  font-size: 8ch;
+  position: fixed;
+  height: 140px;
+}
+
+section {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+h3{
+  cursor: pointer;
+  margin-left: 10%;
+  font-size: larger;
+}
+
+h4{
+  font-size: small;  
+  font-style: italic;
+}
+
+article{
+  margin-left: 5%;
+}
+
+
+
+#info_symbo {
+  cursor: default;
+  display: none;
+}
+
+#symbo{
+  display: none;
+  cursor: default;
+}
+
+#menu {
+  grid-column: 1;
+  grid-row: 2;
+  position: fixed;
+  width: 300px;
+  margin-top: 150px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: rgb(200, 200, 200);
+  border-radius: 2px;
+}
+
+#ulMenu{
+  display: none;
+}
+
+.liMenu {
+  list-style: none;
+}
+
+.boutonDeploi {
+  grid-row: 1;
+  text-decoration: none;
+  width: fit-content;
+  height: fit-content;
+}
+
+/* deploiement jeu hover */
+.boutonDeploi:hover {
+  background-color: #06495f;
+  color:#f7fcf0;
+  cursor: pointer;
+}
+
+
+.a_class{
+  grid-row: 1;
+  margin-left: 10px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.ulClasse{
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+}
+
+td {
+  height: 20px;
+}
+
+form {
+  margin-top: 200px;
+}
+
+input{
+  background-color: white;
+  border: solid 0 white;
+  font-size: larger;
+  font-weight: bold;
+}
